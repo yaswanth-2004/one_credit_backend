@@ -11,7 +11,9 @@ const User = require("./models/User.js");
 const router = express.Router();
 app.use(express.json());
 app.use(cors());
-
+app.use(cors({
+  origin: 'https://lively-dolphin-46223f.netlify.app/'  // replace with your actual Netlify URL
+}));
 const url = "mongodb+srv://yaswanthraje2004:yash7418340216@blog.emzfxlh.mongodb.net/?retryWrites=true&w=majority&appName=Blog";
 
 mongoose
