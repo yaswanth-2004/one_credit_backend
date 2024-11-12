@@ -11,9 +11,16 @@ const User = require("./models/User.js");
 const router = express.Router();
 app.use(express.json());
 app.use(cors());
+const cors = require("cors");
+
+// Update CORS to allow only your Netlify domain
 app.use(cors({
-  origin: 'https://lively-dolphin-46223f.netlify.app/'  // replace with your actual Netlify URL
+  origin: 'https://lively-dolphin-46223f.netlify.app',  // replace with your actual Netlify URL
+  methods: ['GET', 'POST', 'DELETE'],  // Allow the necessary methods
+  credentials: true  // If using cookies or sessions, set to true
 }));
+app.options('*', cors());  // Allow preflight requests from all origins
+
 const url = "mongodb+srv://yaswanthraje2004:yash7418340216@blog.emzfxlh.mongodb.net/?retryWrites=true&w=majority&appName=Blog";
 
 mongoose
