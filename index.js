@@ -11,7 +11,7 @@ const User = require("./models/User.js");
 const router = express.Router();
 app.use(express.json());
 app.use(cors());
-const cors = require("cors");
+
 
 // Update CORS to allow only your Netlify domain
 app.use(cors({
